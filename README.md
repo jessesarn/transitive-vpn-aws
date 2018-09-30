@@ -43,7 +43,7 @@ net.ipv4.ip_forward=1
 - left=xxx.xxx.xxx.xxx - Public IP of the Strongswan instance
 - right=yyy.yyy.yyy.yyy - Outside IP of AWS VGW1
 - mark=100 - Packets marked with this value will be tunneled
-`
+```
 conn %default
 	leftauth=psk
 	rightauth=psk
@@ -79,14 +79,14 @@ conn AWS-VPC-GW1
 	auto=start
 	mark=100
 	#reqid=1
-`
+```
 
 ### Sample ipsec.secrets with AWS VPN Gateway (Can include PSKs for other peers)
-`
+```
 $ cat /etc/ipsec.secrets
 # ipsec.secrets - strongSwan IPsec secrets file
 xxx.xxx.xxx.xxx yyy.yyy.yyy.yyy : PSK "... preshared key for this set of peers ..."
 xxx.xxx.xxx.xxx zzz.zzz.zzz.zzz : PSK "... preshared key for this set of peers ..."
 ...
 
-`
+```
